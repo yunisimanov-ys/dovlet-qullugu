@@ -1,6 +1,3 @@
-login.html
-register.html
-tests.html
-materials.html
-news.html
-contact.html
+function startTest() {
+    alert("Onlayn test sistemi tezliklə istifadəyə veriləcək!");
+}

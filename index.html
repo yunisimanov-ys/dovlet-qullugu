@@ -154,23 +154,23 @@ nav a:hover, nav button:hover{
     margin: 0;
 }
 
-/* Test və Cavab Kartı Dizaynı */
+/* Kitabça / Vərəqləmə Dizaynı */
 .test-container {
     max-width: 900px;
     margin: 30px auto;
     background: #12213d;
-    padding: 40px;
+    padding: 30px;
     border-radius: 15px;
     border: 2px solid #ffd700;
 }
 
-.question-block {
-    background: #0b1220;
-    padding: 15px;
-    border-radius: 10px;
-    margin-bottom: 20px;
-    border: 1px solid #1c315e;
+.book-page {
+    display: none;
     text-align: center;
+}
+
+.book-page.active {
+    display: block;
 }
 
 .question-img {
@@ -183,26 +183,33 @@ nav a:hover, nav button:hover{
     margin-top: 10px;
 }
 
+.book-nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 20px 0;
+}
+
 /* Cavab Kartı */
 .answer-sheet {
     background: #16284b;
     border: 2px solid #ffd700;
-    padding: 25px;
+    padding: 20px;
     border-radius: 12px;
     margin-top: 30px;
 }
 
 .answer-sheet h3 {
     color: #ffd700;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
     text-align: center;
-    font-size: 24px;
+    font-size: 22px;
 }
 
 .answer-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
-    gap: 12px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 10px;
 }
 
 .answer-row {
@@ -210,7 +217,7 @@ nav a:hover, nav button:hover{
     align-items: center;
     justify-content: space-between;
     background: #0b1220;
-    padding: 10px 15px;
+    padding: 8px 12px;
     border-radius: 6px;
     border: 1px solid #1c315e;
 }
@@ -218,11 +225,12 @@ nav a:hover, nav button:hover{
 .answer-row span {
     font-weight: bold;
     color: #ffd700;
+    font-size: 14px;
 }
 
 .options-group {
     display: flex;
-    gap: 8px;
+    gap: 6px;
 }
 
 .options-group label {
@@ -230,10 +238,10 @@ nav a:hover, nav button:hover{
     font-weight: bold;
     color: #ccc;
     background: #12213d;
-    padding: 4px 8px;
+    padding: 3px 7px;
     border-radius: 4px;
     transition: 0.2s;
-    font-size: 14px;
+    font-size: 13px;
 }
 
 .options-group input {
@@ -359,7 +367,7 @@ footer{
                 <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Fənlər üzrə testlər</p>
             </div>
             <div class="card">
-                <p>YENİLİklƏR</p>
+                <p>YENİLİKLƏR</p>
                 <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Elanlar və xəbərlər</p>
             </div>
             <div class="card">
@@ -416,18 +424,26 @@ footer{
     </section>
 </div>
 
-<!-- TEST VƏ CAVAB KARTI SƏHİFƏSİ -->
+<!-- KİTABÇA / VƏRƏQLƏNƏN TEST SƏHİFƏSİ -->
 <div id="mentiq-test-section" style="display:none;">
     <div class="test-container">
-        <h2 id="test-title-heading" style="color:#ffd700; text-align:center; margin-bottom:20px;">Sınaq / Test</h2>
+        <h2 id="test-title-heading" style="color:#ffd700; text-align:center; margin-bottom:15px;">Sınaq / Test</h2>
         
         <form id="logicQuizForm" onsubmit="submitQuiz(event)">
-            <!-- Yüklədiyiniz 6 səhifə şəkli burada ardıcıl görünəcək -->
-            <div id="questions-container"></div>
+            
+            <!-- Kitabça Səhifələri Burada Görünəcək -->
+            <div id="book-pages-container"></div>
 
-            <!-- CAVAB KARTI BÖLMƏSİ -->
+            <!-- Vərəqləmə Düymələri -->
+            <div class="book-nav">
+                <button type="button" class="btn btn-outline" id="prevBtn" onclick="changePage(-1)">⬅️ Əvvəlki səhifə</button>
+                <span id="pageIndicator" style="color: #ffd700; font-weight: bold;">Səhifə 1 / 6</span>
+                <button type="button" class="btn" id="nextBtn" onclick="changePage(1)">Növbəti səhifə ➡️</button>
+            </div>
+
+            <!-- CAVAB KARTI BÖLMƏSİ (Hər səhifəyə uyğun suallar) -->
             <div class="answer-sheet">
-                <h3>📋 İmtahan Cavab Kartı</h3>
+                <h3>📋 Cavab Kartı</h3>
                 <div class="answer-grid" id="answer-sheet-grid">
                     <!-- JavaScript vasitəsilə avtomatik dolacaq -->
                 </div>
@@ -436,7 +452,7 @@ footer{
             <button type="submit" class="btn" style="width:100%; margin-top:25px; padding: 15px; font-size: 18px;">Nəticəni Yoxla və Göndər</button>
         </form>
         <br>
-        <button class="btn btn-outline" onclick="showSection('home')" style="margin-top: 15px;">Ana səhifəyə qayıt</button>
+        <button class="btn btn-outline" onclick="showSection('home')" style="margin-top: 15px; width: 100%;">Ana səhifəyə qayıt</button>
     </div>
 </div>
 
@@ -482,48 +498,75 @@ footer{
         26: 'e', 27: 'b', 28: 'e', 29: 'd', 30: 'c'
     };
 
-    const quizImages = [
-        "Screenshot_20260723_161047_Word.jpg",
-        "Screenshot_20260723_161103_Word.jpg",
-        "Screenshot_20260723_161117_Word.jpg",
-        "Screenshot_20260723_161127_Word.jpg",
-        "Screenshot_20260723_161138_Word.jpg",
-        "Screenshot_20260723_161149_Word.jpg"
+    // Yüklədiyiniz dəqiq fayl adları
+    const bookPages = [
+        { title: "Səhifə 1 (Suallar: 1 - 5)", img: "1-5.jpg", start: 1, end: 5 },
+        { title: "Səhifə 2 (Suallar: 6 - 11)", img: "6-11.jpg", start: 6, end: 11 },
+        { title: "Səhifə 3 (Suallar: 12 - 17)", img: "12-17.jpg", start: 12, end: 17 },
+        { title: "Səhifə 4 (Suallar: 17 - 23)", img: "17-23.jpg", start: 18, end: 23 },
+        { title: "Səhifə 5 (Suallar: 24 - 28)", img: "24-28.jpg", start: 24, end: 28 },
+        { title: "Səhifə 6 (Suallar: 29 - 30)", img: "29-30.jpg", start: 29, end: 30 }
     ];
 
+    let currentPageIndex = 0;
+
     function generateQuiz() {
-        const questionsContainer = document.getElementById('questions-container');
+        const pagesContainer = document.getElementById('book-pages-container');
         const answerSheetGrid = document.getElementById('answer-sheet-grid');
         
-        let qHtml = '';
+        let pagesHtml = '';
         let sheetHtml = '';
 
-        quizImages.forEach((imgSrc, index) => {
-            qHtml += `
-                <div class="question-block">
-                    <p style="color: #ffd700; font-weight: bold; margin-bottom: 8px; text-align: left;">Səhifə ${index + 1}</p>
-                    <img src="${imgSrc}" class="question-img" alt="Sınaq səhifəsi ${index + 1}">
+        // 1. Kitab səhifələrini yaradırıq
+        bookPages.forEach((page, index) => {
+            pagesHtml += `
+                <div class="book-page ${index === 0 ? 'active' : ''}" id="page-${index}">
+                    <p style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">${page.title}</p>
+                    <img src="${page.img}" class="question-img" alt="${page.title}">
                 </div>
             `;
         });
 
+        // 2. 1-dən 30-a qədər Cavab Kartı yaradırıq
         for(let i = 1; i <= 30; i++) {
             sheetHtml += `
                 <div class="answer-row">
                     <span>Sual ${i}:</span>
                     <div class="options-group">
-                        <label><input type="radio" name="q${i}" value="a" required> A</label>
-                        <label><input type="radio" name="q${i}" value="b"> B</label>
-                        <label><input type="radio" name="q${i}" value="c"> C</label>
-                        <label><input type="radio" name="q${i}" value="d"> D</label>
-                        <label><input type="radio" name="q${i}" value="e"> E</label>
+                        <label><input type="radio" name="q${i}" value="a" required><span>A</span></label>
+                        <label><input type="radio" name="q${i}" value="b"><span>B</span></label>
+                        <label><input type="radio" name="q${i}" value="c"><span>C</span></label>
+                        <label><input type="radio" name="q${i}" value="d"><span>D</span></label>
+                        <label><input type="radio" name="q${i}" value="e"><span>E</span></label>
                     </div>
                 </div>
             `;
         }
 
-        questionsContainer.innerHTML = qHtml;
+        pagesContainer.innerHTML = pagesHtml;
         answerSheetGrid.innerHTML = sheetHtml;
+        updateBookNav();
+    }
+
+    function changePage(direction) {
+        currentPageIndex += direction;
+        if (currentPageIndex < 0) currentPageIndex = 0;
+        if (currentPageIndex >= bookPages.length) currentPageIndex = bookPages.length - 1;
+
+        // Bütün səhifələri gizlət, aktiv olanı göstər
+        for (let i = 0; i < bookPages.length; i++) {
+            document.getElementById(`page-${i}`).classList.remove('active');
+        }
+        document.getElementById(`page-${currentPageIndex}`).classList.add('active');
+
+        updateBookNav();
+        window.scrollTo({ top: 200, behavior: 'smooth' });
+    }
+
+    function updateBookNav() {
+        document.getElementById('pageIndicator').innerText = `Səhifə ${currentPageIndex + 1} / ${bookPages.length}`;
+        document.getElementById('prevBtn').style.display = (currentPageIndex === 0) ? 'none' : 'inline-block';
+        document.getElementById('nextBtn').style.display = (currentPageIndex === bookPages.length - 1) ? 'none' : 'inline-block';
     }
 
     function submitQuiz(event) {
@@ -682,3 +725,6 @@ footer{
 
 </body>
 </html>
+
+```
+

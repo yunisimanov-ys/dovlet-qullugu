@@ -69,22 +69,12 @@ nav a:hover, nav button:hover{
     font-size: 14px !important;
 }
 
-.nav-btn:hover {
-    background: #ffb700 !important;
-    color: #000 !important;
-}
-
 .nav-btn-outline {
     border: 2px solid #ffd700 !important;
     color: #ffd700 !important;
     padding: 6px 13px;
     border-radius: 6px;
     font-size: 14px !important;
-}
-
-.nav-btn-outline:hover {
-    background: #ffd700 !important;
-    color: #000 !important;
 }
 
 .hero{
@@ -150,17 +140,11 @@ nav a:hover, nav button:hover{
     padding:30px;
     text-align:center;
     transition:.3s;
+    cursor: pointer;
 }
 
 .card:hover{
     transform:translateY(-8px);
-}
-
-.card img{
-    width:50px;
-    height:50px;
-    margin-bottom:15px;
-    filter: invert(77%) sepia(61%) saturate(750%) hue-rotate(360deg);
 }
 
 .card p{
@@ -170,7 +154,51 @@ nav a:hover, nav button:hover{
     margin: 0;
 }
 
-/* Modal və Şəxsi Kabinet Stiləri */
+/* Test Form Stiləri */
+.test-container {
+    max-width: 800px;
+    margin: 30px auto;
+    background: #12213d;
+    padding: 40px;
+    border-radius: 15px;
+    border: 2px solid #ffd700;
+}
+
+.question-block {
+    background: #0b1220;
+    padding: 20px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    border: 1px solid #1c315e;
+}
+
+.question-block p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffd700;
+    margin-bottom: 12px;
+}
+
+.options label {
+    display: block;
+    background: #16284b;
+    padding: 10px 15px;
+    margin: 8px 0;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+    font-size: 14px;
+}
+
+.options label:hover {
+    background: #1f3768;
+}
+
+.options input {
+    margin-right: 10px;
+}
+
+/* Modal və Kabinet */
 .modal {
     display: none;
     position: fixed;
@@ -240,6 +268,7 @@ footer{
 
 <nav>
     <a onclick="showSection('home')">Ana səhifə</a>
+    <a onclick="showSection('sinaqlar')">Sınaqlar</a>
     <a onclick="showSection('tests')">Testlər</a>
     <a onclick="showSection('materials')">Materiallar</a>
     <a href="https://www.instagram.com/ys.imanoff" target="_blank">İnstagram</a>
@@ -259,7 +288,7 @@ footer{
 <div id="home-section">
     <section class="hero">
         <h2>Dövlət qulluğuna birlikdə hazırlaşaq</h2>
-        <p>Onlayn testlar, PDF materiallar və gündəlik xəbərlə bir addım öndə ol.</p>
+        <p>Onlayn sınaqlar, fənn testləri, PDF materiallar və daha çoxu bir arada.</p>
 
         <div>
             <a href="https://t.me/dovlettqullugu" class="btn">📢 Telegram Kanal</a>
@@ -274,49 +303,83 @@ footer{
     <section>
         <h2 style="text-align:center; color:#ffd700; font-size:32px;">Bizim Xidmətlərimiz</h2>
         <div class="cards">
-            <div class="card" onclick="showSection('tests')" style="cursor: pointer;">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/test.png" alt="Sınaqlar">
+            <div class="card" onclick="showSection('sinaqlar')">
                 <p>SINAQLAR</p>
+                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Ümumi imtahan sınaqları</p>
+            </div>
+            <div class="card" onclick="showSection('tests')">
+                <p>TESTLƏR</p>
+                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Fənlər üzrə testlər</p>
             </div>
             <div class="card">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/news.png" alt="Yeniliklər">
                 <p>YENİLİKLƏR</p>
-            </div>
-            <div class="card" onclick="showSection('tests')" style="cursor: pointer;">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/test.png" alt="Onlayn test">
-                <p>ONLAYN TEST</p>
+                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Elanlar və xəbərlər</p>
             </div>
             <div class="card">
-                <img src="https://img.icons8.com/ios-filled/50/ffffff/pdf.png" alt="PDF material">
                 <p>PDF MATERİAL</p>
+                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Dərs vəsaitləri</p>
             </div>
         </div>
     </section>
 </div>
 
-<!-- TESTLƏR VƏ FƏNLƏR SƏHİFƏSİ -->
-<div id="tests-section" style="display:none;">
+<!-- ÜMUMİ SINAQLAR SƏHİFƏSİ -->
+<div id="sinaqlar-section" style="display:none;">
     <section class="hero">
-        <h2 style="color:#ffd700; font-size:36px; margin-bottom:10px;">Test Fənləri</h2>
-        <p>İmtahana hazırlaşmaq istədiyiniz fənni seçin:</p>
+        <h2 style="color:#ffd700; font-size:36px; margin-bottom:10px;">Ümumi Sınaqlar</h2>
+        <p>İmtahan sınaqlarını seçin:</p>
         
         <div class="cards" style="max-width: 600px;">
-            <div class="card" onclick="openSubject('Azərbaycan dili')" style="cursor: pointer;">
-                <p>Azərbaycan dili</p>
+            <div class="card" onclick="openSinaq('Ümumi Sınaq 1')">
+                <p>Ümumi Sınaq 1</p>
+                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Məntiq (30 Sual)</p>
             </div>
-            <div class="card" onclick="openSubject('Məntiq')" style="cursor: pointer;">
-                <p>Məntiq</p>
-            </div>
-            <div class="card" onclick="openSubject('Qanunvericilik')" style="cursor: pointer;">
-                <p>Qanunvericilik</p>
-            </div>
-            <div class="card" onclick="openSubject('İnformatika')" style="cursor: pointer;">
-                <p>İnformatika</p>
+            <div class="card" onclick="openSinaq('Ümumi Sınaq 2')">
+                <p>Ümumi Sınaq 2</p>
+                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Tezliklə əlavə olunacaq</p>
             </div>
         </div>
         <br>
         <button class="btn btn-outline" onclick="showSection('home')">Ana səhifəyə qayıt</button>
     </section>
+</div>
+
+<!-- FƏNN TESTLƏRİ SƏHİFƏSİ -->
+<div id="tests-section" style="display:none;">
+    <section class="hero">
+        <h2 style="color:#ffd700; font-size:36px; margin-bottom:10px;">Testlər</h2>
+        <p>İmtahana hazırlaşmaq istədiyiniz fənni seçin:</p>
+        
+        <div class="cards" style="max-width: 700px;">
+            <div class="card" onclick="openSubject('Azərbaycan dili')">
+                <p>Azərbaycan dili</p>
+            </div>
+            <div class="card" onclick="openSubject('Qanunvericilik')">
+                <p>Qanunvericilik</p>
+            </div>
+            <div class="card" onclick="openSubject('İnformatika')">
+                <p>İnformatika</p>
+            </div>
+            <div class="card" onclick="openSubject('Məntiq')">
+                <p>Məntiq</p>
+            </div>
+        </div>
+        <br>
+        <button class="btn btn-outline" onclick="showSection('home')">Ana səhifəyə qayıt</button>
+    </section>
+</div>
+
+<!-- TEST İÇ MƏZMUNU -->
+<div id="mentiq-test-section" style="display:none;">
+    <div class="test-container">
+        <h2 id="test-title-heading" style="color:#ffd700; text-align:center; margin-bottom:20px;">Sınaq / Test</h2>
+        <form id="logicQuizForm" onsubmit="submitQuiz(event)">
+            <div id="questions-container"></div>
+            <button type="submit" class="btn" style="width:100%; margin-top:20px;">Nəticəni Yoxla</button>
+        </form>
+        <br>
+        <button class="btn btn-outline" onclick="showSection('home')">Ana səhifəyə qayıt</button>
+    </div>
 </div>
 
 <!-- ŞƏXSİ KABİNET SƏHİFƏSİ -->
@@ -327,7 +390,7 @@ footer{
         <p><b>Əlaqə (Gmail / Nömrə):</b> <span id="profile-contact"></span></p>
         <hr style="border-color: #ffd700; margin: 20px 0;">
         <h3 style="color:#ffd700; margin-bottom:10px;">Sınaq Nəticələrim</h3>
-        <p style="color:#ddd;">Hələ ki heç bir sınaqda iştirak etməmisiniz.</p>
+        <p id="profile-result" style="color:#ddd;">Hələ ki heç bir sınaqda iştirak etməmisiniz.</p>
         <br>
         <button class="btn btn-outline" onclick="showSection('home')">Ana səhifəyə qayıt</button>
     </div>
@@ -352,6 +415,94 @@ footer{
 </footer>
 
 <script>
+    const correctAnswers = {
+        1: 'c', 2: 'b', 3: 'a', 4: 'd', 5: 'c',
+        6: 'c', 7: 'a', 8: 'c', 9: 'e', 10: 'e',
+        11: 'e', 12: 'd', 13: 'd', 14: 'd', 15: 'a',
+        16: 'a', 17: 'b', 18: 'b', 19: 'e', 20: 'c',
+        21: 'e', 22: 'c', 23: 'c', 24: 'a', 25: 'a',
+        26: 'e', 27: 'b', 28: 'e', 29: 'd', 30: 'c'
+    };
+
+    const questionsData = [
+        { q: "1. Qanunauyğunluğu müəyyən edin və “?” əvəzinə uyğun olan variantı seçin: 89, 55, 34, ?, ?, 8, 5, 3, 2, 1", a: "13, 5", b: "13, 10", c: "21, 13", d: "32, 16", e: "17, 16" },
+        { q: "2. Qanunauyğunluğu müəyyən edin və “?” əvəzinə uyğun olan variantı seçin (Romb strukturlu ədəd məntiqi)", a: "48, 124", b: "77, 93", c: "77, 124", d: "48, 93", e: "124, 48" },
+        { q: "3. Qanunauyğunluğu müəyyən edin və “?” əvəzinə uyğun olan variantı seçin (Üçbucaq daxilində ədədlər)", a: "9", b: "5", c: "11", d: "7", e: "12" },
+        { q: "4. Xanalara 1, 2, 3 və 4 ədədlərini elə yerləşdirin ki... Şərtə əsasən düzgün olan münasibətləri seçin.", a: "1, 5, 6", b: "3, 5, 6", c: "1, 2, 4", d: "2, 3, 6", e: "3, 4, 5" },
+        { q: "5. Verilmiş hitoridə bəzi xanaları elə qarayın ki... Sağdan 1-ci sütundakı rənglənməmiş xanaların üzərində yazılan hərfləri seçin.", a: "1. a 2. B 3. C 4. D", b: "1, 2, 3", c: "2, 3, 4", d: "yalnız 3, 4", e: "1, 2, 4" },
+        { q: "6. Aşağıdakı şəkildə qırmızı kvadratlardan başlayaraq istənilən istiqamətdə... 5 kvadratlı komplekslərin sayını müəyyən edin.", a: "17", b: "18", c: "16", d: "15", e: "14" },
+        { q: "7. Tərəfləri 9 sm və 15 sm olan düzbucaqlılardan ən azı neçəsini birləşdirmək lazımdır ki, kvadrat alınsın?", a: "15", b: "9", c: "11", d: "10", e: "12" },
+        { q: "8. Magistraturaya hazırlıq kursunun məntiq, informatika və xarici dil üzrə cəmi 67 dinləyicisi var... Neçə nəfər hər üç fənnin dinləyicisidir?", a: "10", b: "5", c: "3", d: "6", e: "13" },
+        { q: "9. Arzu, Təhminə, Əminə, Kəmalə və Nərminə adlı rəfiqələr müxtəlif dərnəklərə gedirlər... Əminə hansı dərnəyə gedir?", a: "toxuculuq", b: "ingilis dili", c: "gimnastika", d: "kulinariya", e: "rəqs" },
+        { q: "10. Eyni hərflərin eyni, fərqli hərflərin isə fərqli rəqəmlərə uyğun olduğunu bilərək “?” əvəzinə uyğun olan variantı seçin (SU + SU + RİS = KİST)", a: "2041", b: "1234", c: "1945", d: "1378", e: "1082" },
+        { q: "11. Qanunauyğunluğu müəyyən edin və “?” əvəzinə uyğun olan variantı seçin (Oxların istiqaməti və rəqəmlər)", a: "3, 3, 4, 4", b: "4, 4, 3, 4, 3", c: "3, 4, 4, 4, 3", d: "4, 4, 3, 3, 4", e: "4, 3, 4, 3, 4" },
+        { q: "12. Qaranlıq bir gecədə A, B, C və D adlı 4 tədqiqatçı körpünü keçməyə məcbur oldu... Ən tez neçə dəqiqəyə hər kəs körpünün digər tərəfində olar?", a: "23", b: "22", c: "25", d: "21", e: "24" },
+        { q: "13. Aşağıdakı diaqramda müxtəlif yaş qruplarından olan şəxslərin televiziya proqramlarına həftəlik ayırdığı vaxt verilmişdir. Doğru variantları seçin:", a: "1, 4, 5", b: "1, 3, 5", c: "yalnız 5", d: "2, 4", e: "yalnız 2" },
+        { q: "14. Qanunauyğunluğu müəyyən edin və “?” əvəzinə uyğun olan variantı seçin (Həndəsi figurlar və kiçik kvadrat)", a: "A variantı", b: "B variantı", c: "C variantı", d: "D variantı", e: "E variantı" },
+        { q: "15. Yusifin 2 il bundan sonrakı yaşı Muradın 4 il bundan əvvəlki yaşından 5 dəfə çoxdur. İndi onların yaşlarının cəmi 20-dirsə, Yusifin neçə yaşı var?", a: "13", b: "9", c: "11", d: "10", e: "12" },
+        { q: "16. 3000 manat məbləğində pul mükafatı yarışda birinci, ikinci və üçüncü yeri tutan iştirakçılar arasında uyğun olaraq 3:2:1 nisbətində bölüşdürüldü. İkinci yerin sahibi neçə manat mükafat əldə etdi?", a: "1000", b: "600", c: "1200", d: "500", e: "2000" },
+        { q: "17. Firmaya 30 nəfər yeni işçi qəbul edildi. Əgər bunun əvəzinə 30 nəfər işdən azad edilsə idi, firmada indikindən 5 dəfə az işçi olardı. Yeni işçi götürməzdən əvvəl firmada işçilərin sayı neçə idi?", a: "65", b: "45", c: "30", d: "35", e: "60" },
+        { q: "18. Hərf sırası pozulmuş beş sözdən dördü arasında məntiqi əlaqə var. Hərf sırasını bərpa edərək fərqli sözü tapın.", a: "oravidkamee", b: "netenitr", c: "fotokind", d: "zivorelet", e: "fotoqanmin" },
+        { q: "19. Qanunauyğunluğu müəyyən edin və “?” əvəzinə uyğun olan variantı seçin (Dairə və kiçik nöqtə/elementlər)", a: "A variantı", b: "B variantı", c: "C variantı", d: "D variantı", e: "E variantı" },
+        { q: "20. Verilən kuba uyğun olan açılışı seçin.", a: "A variantı", b: "B variantı", c: "C variantı", d: "D variantı", e: "E variantı" },
+        { q: "21. Şəkildə hər biri bağlar vasitəsilə bir və ya neçə halqa ilə əlaqələnən 6 halqalı fiqur verimişdir... x və y ilə hansı halqalar işarələnə bilər?", a: "K və T", b: "M və P", c: "K və L", d: "P və M", e: "K və M" },
+        { q: "22. Kiçik kvadratın sahəsini 1 sahə vahidi kimi qəbul edərək rənglənmiş hissənin sahəsinin neçə sahə vahidi olduğunu müəyyənləşdirin.", a: "21", b: "23", c: "22", d: "24", e: "26" },
+        { q: "23. “?” əvəzinə hansı ədəd yazılmalıdır? [(1, 4)□(k, 2)]Δ[(1, 6)□(2, 3)] = [4, 2] şərtinə əsasən k = ?", a: "12", b: "8", c: "6", d: "4", e: "10" },
+        { q: "24. Hansı 2 hissənin birləşməsindən kvadrat alınar?", a: "2, 5", b: "2, 6", c: "1, 4", d: "3, 5", e: "3, 4" },
+        { q: "25. Qanunauyğunluğu müəyyən edin və “?” əvəzinə uyğun olan variantı seçin (Simvollar cədvəli)", a: "A variantı", b: "B variantı", c: "C variantı", d: "D variantı", e: "E variantı" },
+        { q: "26. “?” əvəzinə hansı ədəd yazılmalıdır? (a+b)/c = ?", a: "9/8", b: "4", c: "5/7", d: "8/9", e: "7/5" },
+        { q: "27. Qatlanmış rəngli kağızda kəsiklər edilib. Fikrən kağızı açın və açılışa uyğun olan variantı seçin.", a: "A variantı", b: "B variantı", c: "C variantı", d: "D variantı", e: "E variantı" },
+        { q: "28. Şəkil əvvəlcə 1-1, sonra 2-2, ardınca 3-3 və nəhayət 4-4 xətləri üzrə qatlanır. “?” işarəsinin yerində alınacaq vəziyyəti müəyyən edin.", a: "A variantı", b: "B variantı", c: "C variantı", d: "D variantı", e: "E variantı" },
+        { q: "29. Vakant iş yerinə qəbul olunmaq üçün sənəd qəbulunun ikinci günü birinci günü ilə müqayisədə 5 dəfə çox kişi və 2 dəfə çox qadın müraciət edib... Hansı mütləq doğrudur?", a: "Birinci gün müraciət edən kişilərin sayı qadınların sayından az olub.", b: "İkinci gün müraciət edənlərin yarıdan çoxu qadınlardır.", c: "İkinci gün müraciət edən qadınların sayı 10-dan çox olub.", d: "Sənəd qəbulunun ilk 2 günündə müraciət edənlərin cəmi sayı 60-dan çox olmayıb.", e: "Birinci gün müraciət edən qadınlar ikinci gün müraciət edən kişilərdən az olub." },
+        { q: "30. Küçədəki 50 evin qapısı 1-dən başlayaraq 50-yə qədər nömrələnib. Bu nömrələmə zamanı neçə dəfə “3” rəqəmindən istifadə olunmuşdur?", a: "17", b: "11", c: "15", d: "16", e: "14" }
+    ];
+
+    function generateQuiz() {
+        const container = document.getElementById('questions-container');
+        let html = '';
+        questionsData.forEach((item, index) => {
+            let i = index + 1;
+            html += `
+                <div class="question-block">
+                    <p>${item.q}</p>
+                    <div class="options">
+                        <label><input type="radio" name="q${i}" value="a" required> A) ${item.a}</label>
+                        <label><input type="radio" name="q${i}" value="b"> B) ${item.b}</label>
+                        <label><input type="radio" name="q${i}" value="c"> C) ${item.c}</label>
+                        <label><input type="radio" name="q${i}" value="d"> D) ${item.d}</label>
+                        <label><input type="radio" name="q${i}" value="e"> E) ${item.e}</label>
+                    </div>
+                </div>
+            `;
+        });
+        container.innerHTML = html;
+    }
+
+    function submitQuiz(event) {
+        event.preventDefault();
+        let score = 0;
+        let total = 30;
+
+        for(let i = 1; i <= total; i++) {
+            const selected = document.querySelector(`input[name="q${i}"]:checked`);
+            if(selected && selected.value === correctAnswers[i]) {
+                score++;
+            }
+        }
+
+        const resultText = `İmtahan nəticəniz: ${score} düzgün, ${total - score} səhv (${total} sualdan).`;
+        
+        let user = JSON.parse(localStorage.getItem('dq_user'));
+        if(user) {
+            user.lastResult = resultText;
+            localStorage.setItem('dq_user', JSON.stringify(user));
+            document.getElementById('profile-result').innerText = resultText;
+        }
+
+        alert(resultText + "\nNəticəniz Şəxsi Kabinetinizə yadda saxlanıldı!");
+        showSection('profile');
+    }
+
     let isLoginMode = false;
 
     function openModal(mode) {
@@ -377,7 +528,11 @@ footer{
         const contact = document.getElementById('contactInput').value;
         const name = isLoginMode ? "İstifadəçi" : document.getElementById('nameInput').value;
 
-        localStorage.setItem('dq_user', JSON.stringify({ name, contact }));
+        let existingUser = JSON.parse(localStorage.getItem('dq_user')) || {};
+        existingUser.name = name;
+        existingUser.contact = contact;
+
+        localStorage.setItem('dq_user', JSON.stringify(existingUser));
         checkUserSession();
         closeModal();
         showSection('profile');
@@ -390,6 +545,9 @@ footer{
             document.getElementById('user-nav-buttons').style.display = 'inline-block';
             document.getElementById('profile-name').innerText = user.name;
             document.getElementById('profile-contact').innerText = user.contact;
+            if(user.lastResult) {
+                document.getElementById('profile-result').innerText = user.lastResult;
+            }
         } else {
             document.getElementById('auth-nav-buttons').style.display = 'inline-block';
             document.getElementById('user-nav-buttons').style.display = 'none';
@@ -403,13 +561,16 @@ footer{
     }
 
     function showSection(sectionName) {
-        // Bölmələri gizlədək
         document.getElementById('home-section').style.display = 'none';
+        document.getElementById('sinaqlar-section').style.display = 'none';
         document.getElementById('tests-section').style.display = 'none';
+        document.getElementById('mentiq-test-section').style.display = 'none';
         document.getElementById('profile-section').style.display = 'none';
 
         if(sectionName === 'home') {
             document.getElementById('home-section').style.display = 'block';
+        } else if(sectionName === 'sinaqlar') {
+            document.getElementById('sinaqlar-section').style.display = 'block';
         } else if(sectionName === 'tests') {
             document.getElementById('tests-section').style.display = 'block';
         } else if(sectionName === 'profile') {
@@ -420,18 +581,37 @@ footer{
                 return;
             }
             document.getElementById('profile-section').style.display = 'block';
-        } else {
-            alert(sectionName.toUpperCase() + ' bölməsi tezliklə aktiv olacaq!');
-            document.getElementById('home-section').style.display = 'block';
         }
     }
 
     function openSubject(subjectName) {
-        alert(subjectName + " fənni üzrə testlər tezliklə əlavə olunacaq!");
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('sinaqlar-section').style.display = 'none';
+        document.getElementById('tests-section').style.display = 'none';
+        
+        if(subjectName === 'Məntiq') {
+            document.getElementById('test-title-heading').innerText = "Məntiq Fənni Üzrə Testlər (30 Sual)";
+            document.getElementById('mentiq-test-section').style.display = 'block';
+        } else {
+            document.getElementById('test-title-heading').innerText = subjectName + " üzrə testlər";
+            document.getElementById('mentiq-test-section').style.display = 'block';
+        }
     }
 
-    window.onload = checkUserSession;
+    function openSinaq(sinaqName) {
+        document.getElementById('home-section').style.display = 'none';
+        document.getElementById('sinaqlar-section').style.display = 'none';
+        document.getElementById('tests-section').style.display = 'none';
+        document.getElementById('test-title-heading').innerText = sinaqName + " - Məntiq (30 Sual)";
+        document.getElementById('mentiq-test-section').style.display = 'block';
+    }
+
+    window.onload = function() {
+        checkUserSession();
+        generateQuiz();
+    };
 </script>
 
 </body>
 </html>
+

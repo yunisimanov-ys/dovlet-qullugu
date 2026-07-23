@@ -73,6 +73,7 @@ nav a:hover{
     font-weight:bold;
     border-radius:10px;
     transition:.3s;
+    margin: 8px;
 }
 
 .btn:hover{
@@ -80,11 +81,24 @@ nav a:hover{
     transform:scale(1.05);
 }
 
+.btn-outline{
+    background: transparent;
+    color: #ffd700;
+    border: 2px solid #ffd700;
+}
+
+.btn-outline:hover{
+    background: #ffd700;
+    color: #000;
+}
+
 .cards{
     display:grid;
     grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
     gap:20px;
     padding:40px;
+    max-width: 900px;
+    margin: 0 auto;
 }
 
 .card{
@@ -100,11 +114,19 @@ nav a:hover{
     transform:translateY(-8px);
 }
 
-.card a{
+.card img{
+    width:50px;
+    height:50px;
+    margin-bottom:15px;
+    filter: invert(77%) sepia(61%) saturate(750%) hue-rotate(360deg);
+}
+
+.card a, .card p{
     color:#fff;
     text-decoration:none;
     font-size:22px;
     font-weight:bold;
+    margin: 0;
 }
 
 footer{
@@ -113,4 +135,5 @@ footer{
     padding:18px;
     text-align:center;
     color:#ddd;
+    border-top: 3px solid #ffd700;
 }

@@ -1,66 +1,116 @@
-body{
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
     font-family:Arial,sans-serif;
-    background:#0b1623;
-    color:white;
+    background:#0b1220;
+    color:#fff;
+    line-height:1.6;
 }
 
 header{
-    background:#14213d;
+    background:#12213d;
     padding:25px;
     text-align:center;
+    border-bottom:3px solid #ffd700;
 }
 
 header h1{
-    margin:0;
-    font-size:40px;
+    color:#ffd700;
+    font-size:42px;
 }
 
 header p{
-    font-size:18px;
+    margin-top:8px;
+    color:#ddd;
 }
 
 nav{
     display:flex;
     justify-content:center;
-    gap:20px;
-    background:#1b2d4f;
-    padding:15px;
     flex-wrap:wrap;
+    gap:20px;
+    padding:15px;
+    background:#16284b;
 }
 
 nav a{
-    color:white;
+    color:#fff;
     text-decoration:none;
     font-weight:bold;
+    transition:.3s;
+}
+
+nav a:hover{
+    color:#ffd700;
 }
 
 .hero{
     text-align:center;
-    padding:70px 20px;
+    padding:80px 20px;
 }
 
 .hero h2{
-    font-size:36px;
+    font-size:38px;
+    color:#ffd700;
 }
 
 .hero p{
-    font-size:20px;
+    margin:20px auto;
     max-width:700px;
-    margin:auto;
-}
-
-button{
-    margin-top:30px;
-    padding:15px 35px;
     font-size:20px;
-    border:none;
-    border-radius:8px;
-    background:#ff9800;
-    color:white;
-    cursor:pointer;
 }
 
-button:hover{
-    background:#e68900;
+.btn{
+    display:inline-block;
+    padding:15px 35px;
+    background:#ffd700;
+    color:#000;
+    text-decoration:none;
+    font-weight:bold;
+    border-radius:10px;
+    transition:.3s;
+}
+
+.btn:hover{
+    background:#ffb700;
+    transform:scale(1.05);
+}
+
+.cards{
+    display:grid;
+    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    gap:20px;
+    padding:40px;
+}
+
+.card{
+    background:#182c50;
+    border:2px solid #ffd700;
+    border-radius:12px;
+    padding:30px;
+    text-align:center;
+    transition:.3s;
+}
+
+.card:hover{
+    transform:translateY(-8px);
+}
+
+.card a{
+    color:#fff;
+    text-decoration:none;
+    font-size:22px;
+    font-weight:bold;
+}
+
+footer{
+    margin-top:50px;
+    background:#12213d;
+    padding:18px;
+    text-align:center;
+    color:#ddd;
 }

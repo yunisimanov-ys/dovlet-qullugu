@@ -13,155 +13,265 @@
 
 body{
     font-family:Arial,sans-serif;
-    background:#0b1220;
-    color:#fff;
+    background:#f8f9fa;
+    color:#333;
     line-height:1.6;
 }
 
+/* Ən Üst Əlaqə və Sosial Panel */
+.top-bar {
+    background: #00c853;
+    padding: 10px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 10px;
+}
+
+.top-contact {
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+.top-contact a {
+    color: #fff;
+    text-decoration: none;
+    font-size: 14px;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.top-socials {
+    display: flex;
+    gap: 10px;
+}
+
+.top-socials a {
+    width: 32px;
+    height: 32px;
+    background: #fff;
+    color: #00c853;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    font-weight: bold;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.top-socials a:hover {
+    background: #0f172a;
+    color: #fff;
+}
+
+/* Header və Naviqasiya */
 header{
-    background:#12213d;
-    padding:25px;
-    text-align:center;
-    border-bottom:3px solid #ffd700;
+    background:#fff;
+    padding: 15px 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 1px solid #eaeaea;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-header h1{
-    color:#ffd700;
-    font-size:42px;
+.logo-area {
+    display: flex;
+    align-items: center;
+    gap: 15px;
 }
 
-header p{
-    margin-top:8px;
-    color:#ddd;
+.logo-area h1 {
+    color: #0f172a;
+    font-size: 24px;
+    font-weight: bold;
 }
 
+.auth-buttons-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.btn-login {
+    background: #00c853;
+    color: #fff;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-login:hover {
+    background: #00b046;
+}
+
+.btn-register {
+    background: transparent;
+    color: #0f172a;
+    padding: 10px 22px;
+    border-radius: 30px;
+    font-weight: bold;
+    border: 1px solid #e2e8f0;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.btn-register:hover {
+    border-color: #00c853;
+    color: #00c853;
+}
+
+/* Nav Menu Bar */
 nav{
+    background:#0f172a;
     display:flex;
     justify-content:center;
     align-items:center;
     flex-wrap:wrap;
-    gap:15px;
-    padding:15px;
-    background:#16284b;
+    gap:20px;
+    padding:12px;
 }
 
 nav a, nav button{
     color:#fff;
     text-decoration:none;
-    font-weight:bold;
+    font-weight:600;
     transition:.3s;
     background: transparent;
     border: none;
-    font-size: 15px;
+    font-size: 14px;
     cursor: pointer;
     font-family: Arial, sans-serif;
 }
 
-nav a:hover, nav button:hover{
-    color:#ffd700;
+nav a:hover, nav buttonhover{
+    color:#00c853;
 }
 
-.nav-btn {
-    background: #ffd700 !important;
-    color: #000 !important;
-    padding: 8px 15px;
-    border-radius: 6px;
-    font-size: 14px !important;
+/* Hero Bölmələri (Ağ Card Dizaynı) */
+.hero-box {
+    max-width: 900px;
+    margin: 40px auto;
+    background: #fff;
+    padding: 40px 30px;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
+    text-align: center;
+    border: 1px solid #eaeaea;
 }
 
-.nav-btn-outline {
-    border: 2px solid #ffd700 !important;
-    color: #ffd700 !important;
-    padding: 6px 13px;
-    border-radius: 6px;
-    font-size: 14px !important;
+.hero-box h2 {
+    font-size: 32px;
+    color: #0f172a;
+    margin-bottom: 15px;
 }
 
-.hero{
-    text-align:center;
-    padding:60px 20px;
+.hero-box p {
+    color: #64748b;
+    font-size: 16px;
+    margin-bottom: 25px;
+    max-width: 650px;
+    margin-left: auto;
+    margin-right: auto;
 }
 
-.hero h2{
-    font-size:38px;
-    color:#ffd700;
-}
-
-.hero p{
-    margin:20px auto;
-    max-width:700px;
-    font-size:20px;
-}
-
-.btn{
-    display:inline-block;
-    padding:15px 35px;
-    background:#ffd700;
-    color:#000;
-    text-decoration:none;
-    font-weight:bold;
-    border-radius:10px;
+/* Əsas Yaşıl və Göy Düymələr */
+.btn-main-green {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #00c853;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 35px;
     transition:.3s;
-    margin: 8px;
+    margin: 6px;
     border: none;
     cursor: pointer;
-    font-size: 16px;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(0,200,83,0.2);
 }
 
-.btn:hover{
-    background:#ffb700;
-    transform:scale(1.05);
+.btn-main-green:hover {
+    background: #00b046;
+    transform: translateY(-2px);
 }
 
-.btn-outline{
-    background: transparent;
-    color: #ffd700;
-    border: 2px solid #ffd700;
+.btn-main-dark {
+    display: inline-block;
+    padding: 14px 30px;
+    background: #0f172a;
+    color: #fff;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 35px;
+    transition:.3s;
+    margin: 6px;
+    border: none;
+    cursor: pointer;
+    font-size: 15px;
+    box-shadow: 0 4px 12px rgba(15,23,42,0.2);
 }
 
-.btn-outline:hover{
-    background: #ffd700;
-    color: #000;
+.btn-main-dark:hover {
+    background: #1e293b;
+    transform: translateY(-2px);
 }
 
+/* Xidmət Kartları */
 .cards{
     display:grid;
-    grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+    grid-template-columns:repeat(auto-fit,minmax(200px,1fr));
     gap:20px;
-    padding:40px;
-    max-width: 900px;
+    padding:20px 0;
+    max-width: 850px;
     margin: 0 auto;
 }
 
 .card{
-    background:#182c50;
-    border:2px solid #ffd700;
-    border-radius:12px;
-    padding:30px;
+    background:#fff;
+    border:1px solid #e2e8f0;
+    border-radius:15px;
+    padding:25px 20px;
     text-align:center;
     transition:.3s;
     cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.02);
 }
 
 .card:hover{
-    transform:translateY(-8px);
+    transform:translateY(-5px);
+    border-color: #00c853;
+    box-shadow: 0 10px 15px rgba(0,0,0,0.05);
 }
 
-.card p{
-    color:#fff;
-    font-size:22px;
+.card p.card-title{
+    color:#0f172a;
+    font-size:18px;
     font-weight:bold;
-    margin: 0;
 }
 
-/* Kitabça / Vərəqləmə Dizaynı */
+/* Kitabça / Vərəqlənən Məntiq Testi Səhifəsi */
 .test-container {
     max-width: 900px;
     margin: 30px auto;
-    background: #12213d;
+    background: #fff;
     padding: 30px;
-    border-radius: 15px;
-    border: 2px solid #ffd700;
+    border-radius: 20px;
+    border: 1px solid #eaeaea;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .book-page {
@@ -176,8 +286,8 @@ nav a:hover, nav button:hover{
 .question-img {
     max-width: 100%;
     height: auto;
-    border-radius: 8px;
-    border: 2px solid #ffd700;
+    border-radius: 10px;
+    border: 1px solid #e2e8f0;
     background: #fff;
     padding: 5px;
     margin-top: 10px;
@@ -192,18 +302,18 @@ nav a:hover, nav button:hover{
 
 /* Cavab Kartı */
 .answer-sheet {
-    background: #16284b;
-    border: 2px solid #ffd700;
+    background: #f8f9fa;
+    border: 1px solid #e2e8f0;
     padding: 20px;
-    border-radius: 12px;
+    border-radius: 15px;
     margin-top: 30px;
 }
 
 .answer-sheet h3 {
-    color: #ffd700;
+    color: #0f172a;
     margin-bottom: 15px;
     text-align: center;
-    font-size: 22px;
+    font-size: 20px;
 }
 
 .answer-grid {
@@ -216,15 +326,15 @@ nav a:hover, nav button:hover{
     display: flex;
     align-items: center;
     justify-content: space-between;
-    background: #0b1220;
-    padding: 8px 12px;
-    border-radius: 6px;
-    border: 1px solid #1c315e;
+    background: #fff;
+    padding: 10px 14px;
+    border-radius: 8px;
+    border: 1px solid #e2e8f0;
 }
 
 .answer-row span {
     font-weight: bold;
-    color: #ffd700;
+    color: #0f172a;
     font-size: 14px;
 }
 
@@ -236,10 +346,10 @@ nav a:hover, nav button:hover{
 .options-group label {
     cursor: pointer;
     font-weight: bold;
-    color: #ccc;
-    background: #12213d;
-    padding: 3px 7px;
-    border-radius: 4px;
+    color: #64748b;
+    background: #f1f5f9;
+    padding: 4px 8px;
+    border-radius: 5px;
     transition: 0.2s;
     font-size: 13px;
 }
@@ -249,59 +359,54 @@ nav a:hover, nav button:hover{
 }
 
 .options-group input:checked + span, .options-group label:has(input:checked) {
-    background: #ffd700;
-    color: #000;
+    background: #00c853;
+    color: #fff;
 }
 
-/* Siyasət və Şərtlər Səhifəsi Üslubu */
+/* Siyasət və Şərtlər Səhifəsi */
 .policy-container {
     max-width: 800px;
     margin: 40px auto;
-    background: #12213d;
-    border: 2px solid #ffd700;
-    border-radius: 15px;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 20px;
     padding: 40px;
     text-align: left;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 .policy-container h2 {
-    color: #ffd700;
+    color: #0f172a;
     margin-bottom: 20px;
     text-align: center;
-    font-size: 28px;
+    font-size: 26px;
 }
 
 .policy-container h3 {
-    color: #ffd700;
+    color: #0f172a;
     margin-top: 25px;
     margin-bottom: 10px;
     font-size: 18px;
 }
 
-.policy-container p {
-    color: #ddd;
-    margin-bottom: 12px;
+.policy-container p, .policy-container li {
+    color: #64748b;
     font-size: 14px;
+    margin-bottom: 8px;
 }
 
 .policy-container ul {
     margin-left: 20px;
     margin-bottom: 15px;
-    color: #ddd;
-    font-size: 14px;
 }
 
-.policy-container li {
-    margin-bottom: 6px;
-}
-
-/* Modal / Daxil ol səhifəsi dizaynı */
+/* Modal Dizaynı */
 .modal {
     display: none;
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
-    background: rgba(0,0,0,0.85);
+    background: rgba(0,0,0,0.6);
     justify-content: center;
     align-items: center;
     z-index: 1000;
@@ -309,32 +414,34 @@ nav a:hover, nav button:hover{
 }
 
 .modal-content {
-    background: #12213d;
-    padding: 30px;
-    border-radius: 15px;
-    border: 2px solid #ffd700;
+    background: #fff;
+    padding: 35px 30px;
+    border-radius: 20px;
+    border: 1px solid #eaeaea;
     width: 100%;
-    max-width: 450px;
+    max-width: 420px;
     text-align: left;
     position: relative;
+    box-shadow: 0 20px 40px rgba(0,0,0,0.1);
 }
 
 .close-btn {
     position: absolute;
     top: 15px; right: 20px;
-    font-size: 26px;
-    color: #ffd700;
+    font-size: 24px;
+    color: #64748b;
     cursor: pointer;
 }
 
 .modal-content h2 {
-    color: #ffd700;
+    color: #0f172a;
     margin-bottom: 8px;
     text-align: center;
+    font-size: 24px;
 }
 
 .modal-content p.sub-text {
-    color: #ccc;
+    color: #64748b;
     font-size: 13px;
     text-align: center;
     margin-bottom: 20px;
@@ -342,11 +449,11 @@ nav a:hover, nav button:hover{
 
 .google-btn {
     width: 100%;
-    background: #fff;
+    background: #f8f9fa;
     color: #333;
-    border: none;
+    border: 1px solid #e2e8f0;
     padding: 12px;
-    border-radius: 8px;
+    border-radius: 10px;
     font-weight: bold;
     cursor: pointer;
     display: flex;
@@ -354,21 +461,27 @@ nav a:hover, nav button:hover{
     justify-content: center;
     gap: 10px;
     margin-bottom: 20px;
-    font-size: 15px;
+    font-size: 14px;
+    transition: 0.3s;
+}
+
+.google-btn:hover {
+    background: #f1f5f9;
 }
 
 .divider {
     text-align: center;
-    border-bottom: 1px solid #1c315e;
+    border-bottom: 1px solid #e2e8f0;
     line-height: 0.1em;
     margin: 20px 0;
 }
 
 .divider span {
-    background: #12213d;
+    background: #fff;
     padding: 0 10px;
-    color: #888;
+    color: #94a3b8;
     font-size: 12px;
+    font-weight: bold;
 }
 
 .input-group {
@@ -377,9 +490,10 @@ nav a:hover, nav button:hover{
 
 .input-group label {
     display: block;
-    color: #ffd700;
-    font-size: 14px;
-    margin-bottom: 5px;
+    color: #0f172a;
+    font-size: 13px;
+    font-weight: bold;
+    margin-bottom: 6px;
 }
 
 .modal-content input[type="text"],
@@ -387,16 +501,22 @@ nav a:hover, nav button:hover{
 .modal-content input[type="password"] {
     width: 100%;
     padding: 12px;
-    background: #0b1220;
-    border: 1px solid #ffd700;
-    color: #fff;
-    border-radius: 8px;
+    background: #f8f9fa;
+    border: 1px solid #e2e8f0;
+    color: #333;
+    border-radius: 10px;
     font-size: 14px;
+}
+
+.modal-content input:focus {
+    border-color: #00c853;
+    outline: none;
+    background: #fff;
 }
 
 .input-hint {
     font-size: 11px;
-    color: #aaa;
+    color: #94a3b8;
     margin-top: 4px;
     display: block;
 }
@@ -404,24 +524,25 @@ nav a:hover, nav button:hover{
 .profile-container {
     max-width: 600px;
     margin: 40px auto;
-    background: #12213d;
-    border: 2px solid #ffd700;
-    border-radius: 15px;
-    padding: 30px;
+    background: #fff;
+    border: 1px solid #eaeaea;
+    border-radius: 20px;
+    padding: 35px;
     text-align: center;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.05);
 }
 
 footer{
     margin-top:50px;
-    background:#12213d;
-    padding:18px;
+    background:#0f172a;
+    padding:25px;
     text-align:center;
-    color:#ddd;
-    border-top: 3px solid #ffd700;
+    color:#fff;
+    border-top: 4px solid #00c853;
 }
 
 footer a {
-    color: #ffd700;
+    color: #00c853;
     text-decoration: none;
     margin: 0 10px;
     font-size: 14px;
@@ -434,11 +555,36 @@ footer a:hover {
 </head>
 <body>
 
+<!-- ƏN ÜST ƏLAQƏ PANELİ -->
+<div class="top-bar">
+    <div class="top-contact">
+        <a href="tel:+994708838100">📞 +994 70 883 81 00</a>
+        <a href="mailto:info@dovletqullugu.info">✉️ info@dovletqullugu.info</a>
+    </div>
+    <div class="top-socials">
+        <a href="https://www.facebook.com" target="_blank">f</a>
+        <a href="https://www.instagram.com/ys.imanoff" target="_blank">📷</a>
+        <a href="https://youtube.com" target="_blank">▶</a>
+        <a href="https://wa.me/qr/2OLYZXD45JFZO1" target="_blank">💬</a>
+    </div>
+</div>
+
+<!-- HEADER VƏ LOGO -->
 <header>
-    <h1>DQ Platform</h1>
-    <p>Dövlət qulluğuna hazırlıq platforması</p>
+    <div class="logo-area">
+        <h1>DQ Platform</h1>
+    </div>
+    <div class="auth-buttons-header" id="auth-nav-buttons">
+        <button class="btn-login" onclick="openModal('login')">Daxil ol</button>
+        <button class="btn-register" onclick="openModal('register')">Qeydiyyatdan keç</button>
+    </div>
+    <div class="auth-buttons-header" id="user-nav-buttons" style="display:none;">
+        <button class="btn-login" onclick="showSection('profile')">👤 Kabinet</button>
+        <button class="btn-register" onclick="logout()" style="border-color: #ef4444; color: #ef4444;">Çıxış</button>
+    </div>
 </header>
 
+<!-- NAVİQASİYA MENUSU -->
 <nav>
     <a onclick="showSection('home')">Ana səhifə</a>
     <a onclick="checkAndShow('sinaqlar')">Sınaqlar</a>
@@ -446,51 +592,43 @@ footer a:hover {
     <a onclick="showSection('materials')">Materiallar</a>
     <a href="https://www.instagram.com/ys.imanoff" target="_blank">İnstagram</a>
     <a href="https://wa.me/qr/2OLYZXD45JFZO1" target="_blank">WhatsApp</a>
-    
-    <span id="auth-nav-buttons">
-        <button class="nav-btn-outline" onclick="openModal('login')">Daxil ol</button>
-        <button class="nav-btn" onclick="openModal('register')">Qeydiyyat</button>
-    </span>
-    <span id="user-nav-buttons" style="display:none;">
-        <button class="nav-btn" onclick="showSection('profile')">👤 Kabinet</button>
-        <button class="nav-btn-outline" onclick="logout()" style="border-color: #ff4d4d !important; color: #ff4d4d !important;">Çıxış</button>
-    </span>
 </nav>
 
 <!-- ƏSAS SƏHİFƏ -->
 <div id="home-section">
-    <section class="hero">
-        <h2>Dövlət qulluğuna birlikdə hazırlaşaq</h2>
-        <p>Onlayn sınaqlar, fənn testləri, PDF materiallar və daha çoxu bir arada.</p>
+    <div class="hero-box">
+        <h2>Dövlət Qulluğu üçün Sınaq İmtahanları!</h2>
+        <p>Real imtahan təcrübəsi əsasında hazırlanmış sınaq imtahanları, fənn testləri və PDF materiallar.</p>
 
         <div>
-            <a href="https://t.me/dovlettqullugu" class="btn">📢 Telegram Kanal</a>
-            <a href="https://t.me/+zhXBpDwFobg3ZWZi" class="btn btn-outline">👥 Telegram Qrup</a>
+            <button class="btn-main-green" onclick="checkAndShow('sinaqlar')">🎓 Sınaqlara Bax</button>
+            <button class="btn-main-dark" onclick="openModal('register')">👤 Qeydiyyatdan Keç və İndi Başla</button>
         </div>
-        <div style="margin-top: 15px;">
-            <a href="https://chat.whatsapp.com/GIb2EwwiXXg3PpEJWZVKss" class="btn btn-outline">💬 WhatsApp Qrup</a>
-            <a href="https://whatsapp.com/channel/0029VbCALY9BPzjZ5x9GrH3f" class="btn btn-outline">📣 WhatsApp Kanal</a>
+        
+        <div style="margin-top: 25px;">
+            <a href="https://t.me/dovlettqullugu" class="btn-main-dark" style="font-size: 13px; padding: 10px 20px;">📢 Telegram Kanal</a>
+            <a href="https://chat.whatsapp.com/GIb2EwwiXXg3PpEJWZVKss" class="btn-main-dark" style="font-size: 13px; padding: 10px 20px;">💬 WhatsApp Qrup</a>
         </div>
-    </section>
+    </div>
 
     <section>
-        <h2 style="text-align:center; color:#ffd700; font-size:32px;">Bizim Xidmətlərimiz</h2>
+        <h2 style="text-align:center; color:#0f172a; font-size:28px; margin-bottom: 10px;">Bizim Xidmətlərimiz</h2>
         <div class="cards">
             <div class="card" onclick="checkAndShow('sinaqlar')">
-                <p>SINAQLAR</p>
-                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Ümumi imtahan sınaqları</p>
+                <p class="card-title">SINAQLAR</p>
+                <p style="font-size: 13px; color: #64748b; margin-top: 6px;">Ümumi imtahan sınaqları</p>
             </div>
             <div class="card" onclick="checkAndShow('tests')">
-                <p>TESTLƏR</p>
-                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Fənlər üzrə testlər</p>
+                <p class="card-title">TESTLƏR</p>
+                <p style="font-size: 13px; color: #64748b; margin-top: 6px;">Fənlər üzrə testlər</p>
             </div>
-            <div class="card">
-                <p>YENİLİKLƏR</p>
-                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Elanlar və xəbərlər</p>
+            <div class="card" onclick="showSection('home')">
+                <p class="card-title">YENİLİKLƏR</p>
+                <p style="font-size: 13px; color: #64748b; margin-top: 6px;">Elanlar və xəbərlər</p>
             </div>
-            <div class="card">
-                <p>PDF MATERİAL</p>
-                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Dərs vəsaitləri</p>
+            <div class="card" onclick="showSection('home')">
+                <p class="card-title">PDF MATERİAL</p>
+                <p style="font-size: 13px; color: #64748b; margin-top: 6px;">Dərs vəsaitləri</p>
             </div>
         </div>
     </section>
@@ -498,79 +636,87 @@ footer a:hover {
 
 <!-- ÜMUMİ SINAQLAR SƏHİFƏSİ -->
 <div id="sinaqlar-section" style="display:none;">
-    <section class="hero">
-        <h2 style="color:#ffd700; font-size:36px; margin-bottom:10px;">Ümumi Sınaqlar</h2>
-        <p>İmtahan sınaqlarını seçin:</p>
+    <div class="hero-box" style="max-width: 700px;">
+        <h2 style="color:#0f172a;">Ümumi Sınaqlar</h2>
+        <p>İştirak etmək istədiyiniz sınaq seçimini edin:</p>
         
-        <div class="cards" style="max-width: 600px;">
-            <div class="card" onclick="openSinaq('Ümumi Sınaq 1')">
-                <p>Ümumi Sınaq 1</p>
-                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Məntiq (30 Sual)</p>
+        <div class="cards" style="max-width: 500px; margin-bottom: 20px;">
+            <div class="card" onclick="alert('Ümumi Sınaq 1 tezliklə əlavə olunacaq!')">
+                <p class="card-title">Ümumi Sınaq 1</p>
+                <p style="font-size: 12px; color: #64748b; margin-top: 4px;">Blok imtahanı</p>
             </div>
-            <div class="card" onclick="openSinaq('Ümumi Sınaq 2')">
-                <p>Ümumi Sınaq 2</p>
-                <p style="font-size: 13px; color: #ddd; margin-top: 8px; font-weight: normal;">Tezliklə əlavə olunacaq</p>
+            <div class="card" onclick="alert('Ümumi Sınaq 2 tezliklə əlavə olunacaq!')">
+                <p class="card-title">Ümumi Sınaq 2</p>
+                <p style="font-size: 12px; color: #64748b; margin-top: 4px;">Sınaq 2</p>
             </div>
         </div>
-        <br>
-        <button class="btn btn-outline" onclick="showSection('home')">Ana səhifəyə qayıt</button>
-    </section>
+        <button class="btn-main-dark" onclick="showSection('home')">Ana səhifəyə qayıt</button>
+    </div>
 </div>
 
 <!-- FƏNN TESTLƏRİ SƏHİFƏSİ -->
 <div id="tests-section" style="display:none;">
-    <section class="hero">
-        <h2 style="color:#ffd700; font-size:36px; margin-bottom:10px;">Testlər</h2>
+    <div class="hero-box" style="max-width: 750px;">
+        <h2 style="color:#0f172a;">Fənn Testləri</h2>
         <p>İmtahana hazırlaşmaq istədiyiniz fənni seçin:</p>
         
-        <div class="cards" style="max-width: 700px;">
+        <div class="cards" style="max-width: 650px; margin-bottom: 20px;">
             <div class="card" onclick="openSubject('Azərbaycan dili')">
-                <p>Azərbaycan dili</p>
+                <p class="card-title">Azərbaycan dili</p>
             </div>
             <div class="card" onclick="openSubject('Qanunvericilik')">
-                <p>Qanunvericilik</p>
+                <p class="card-title">Qanunvericilik</p>
             </div>
             <div class="card" onclick="openSubject('İnformatika')">
-                <p>İnformatika</p>
+                <p class="card-title">İnformatika</p>
             </div>
             <div class="card" onclick="openSubject('Məntiq')">
-                <p>Məntiq</p>
+                <p class="card-title">Məntiq</p>
             </div>
         </div>
-        <br>
-        <button class="btn btn-outline" onclick="showSection('home')">Ana səhifəyə qayıt</button>
-    </section>
+        <button class="btn-main-dark" onclick="showSection('home')">Ana səhifəyə qayıt</button>
+    </div>
 </div>
 
-<!-- KİTABÇA / VƏRƏQLƏNƏN TEST SƏHİFƏSİ -->
+<!-- KİTABÇA / VƏRƏQLƏNƏN MƏNTİQ TESTİ SƏHİFƏSİ -->
 <div id="mentiq-test-section" style="display:none;">
     <div class="test-container">
-        <h2 id="test-title-heading" style="color:#ffd700; text-align:center; margin-bottom:15px;">Sınaq / Test</h2>
+        <h2 id="test-title-heading" style="color:#0f172a; text-align:center; margin-bottom:15px;">Məntiq Testləri</h2>
         
         <form id="logicQuizForm" onsubmit="submitQuiz(event)">
             
-            <!-- Kitabça Səhifələri Burada Görünəcək -->
+            <!-- Kitabça Səhifələri -->
             <div id="book-pages-container"></div>
 
             <!-- Vərəqləmə Düymələri -->
             <div class="book-nav">
-                <button type="button" class="btn btn-outline" id="prevBtn" onclick="changePage(-1)">⬅️ Əvvəlki səhifə</button>
-                <span id="pageIndicator" style="color: #ffd700; font-weight: bold;">Səhifə 1 / 6</span>
-                <button type="button" class="btn" id="nextBtn" onclick="changePage(1)">Növbəti səhifə ➡️</button>
+                <button type="button" class="btn-main-dark" id="prevBtn" onclick="changePage(-1)">⬅️ Əvvəlki</button>
+                <span id="pageIndicator" style="color: #0f172a; font-weight: bold;">Səhifə 1 / 6</span>
+                <button type="button" class="btn-main-green" id="nextBtn" onclick="changePage(1)">Növbəti ➡️</button>
             </div>
 
-            <!-- CAVAB KARTI BÖLMƏSİ -->
+            <!-- CAVAB KARTI -->
             <div class="answer-sheet">
                 <h3>📋 Cavab Kartı</h3>
                 <div class="answer-grid" id="answer-sheet-grid">
-                    <!-- JavaScript vasitəsilə avtomatik dolacaq -->
+                    <!-- JS vasitəsilə dolacaq -->
                 </div>
             </div>
 
-            <button type="submit" class="btn" style="width:100%; margin-top:25px; padding: 15px; font-size: 18px;">Nəticəni Yoxla və Göndər</button>
+            <button type="submit" class="btn-main-green" style="width:100%; margin-top:25px; padding: 15px; font-size: 16px;">Nəticəni Yoxla və Göndər</button>
         </form>
         <br>
-        <button class="btn btn-outline" onclick="showSection('home')" style="margin-top: 15px; width: 100%;">Ana səhifəyə qayıt</button>
+        <button class="btn-main-dark" onclick="showSection('tests')" style="width: 100%; margin-top: 10px;">Testlərə qayıt</button>
+    </div>
+</div>
+
+<!-- DİGƏR FƏNNLƏR ÜÇÜN SADƏ BÖLMƏ -->
+<div id="other-test-section" style="display:none;">
+    <div class="hero-box" style="max-width: 600px;">
+        <h2 id="other-test-title" style="color:#0f172a;">Fənn</h2>
+        <p style="color: #64748b;">Bu fənn üzrə testlər tezliklə əlavə olunacaq.</p>
+        <br>
+        <button class="btn-main-dark" onclick="showSection('tests')">Testlərə qayıt</button>
     </div>
 </div>
 
@@ -578,154 +724,39 @@ footer a:hover {
 <div id="terms-section" style="display:none;">
     <div class="policy-container">
         <h2>İstifadə Şərtləri</h2>
-        
         <h3>1. Ümumi Məlumat</h3>
-        <p>Bu istifadə şərtləri ("Şərtlər") https://dovletqullugu.info/ saytından ("Sayt") istifadə edən bütün şəxslər üçün keçərlidir. Sayta daxil olmaqla və ya Saytdan istifadə edərək siz bu şərtlərlə razılaşırsınız. Əgər bu şərtlərlə razı deyilsinizsə, xahiş edirik Saytdan istifadə etməyəsiniz.</p>
-
+        <p>Bu istifadə şərtləri https://dovletqullugu.info/ saytından istifadə edən şəxslər üçün keçərlidir.</p>
         <h3>2. Saytın Məqsədi</h3>
-        <p>https://dovletqullugu.info/ dövlət qulluğu imtahanlarına hazırlıq məqsədi ilə təhsil materialları, sınaq imtahanları və digər resurslar təqdim edən platformadır.</p>
-
-        <h3>3. Hesab Yaratmaq və Qaydalar</h3>
-        <ul>
-            <li>Saytdan istifadə etmək üçün bəzi hallarda hesab yaratmaq tələb oluna bilər.</li>
-            <li>Hesabınızdakı məlumatların doğru və tam olmasına cavabdehsiniz.</li>
-            <li>Hesabınıza giriş məlumatlarını gizli saxlamalısınız və üçüncü şəxslərlə paylaşmamalısınız.</li>
-        </ul>
-
-        <h3>4. Məzmundan İstifadə</h3>
-        <ul>
-            <li>Saytda təqdim olunan bütün materiallar müəllif hüquqları və digər qanunlarla qorunur.</li>
-            <li>Materiallardan yalnız şəxsi təhsil məqsədilə istifadə etmək mümkündür.</li>
-            <li>Saytda olan məlumatların, sualların və digər məzmunun təkrar çapı, yayımı və kommersiya məqsədi ilə istifadəsi qanunaziddir və icazə tələb edir.</li>
-        </ul>
-
-        <h3>5. Ödənişlər və Abunəliklər</h3>
-        <ul>
-            <li>Saytda müəyyən xidmətlər ödənişli ola bilər.</li>
-            <li>Ödənişlər təhlükəsiz və şifrələnmiş formada həyata keçirilir.</li>
-            <li>Ödənişlə bağlı hər hansı problem yaranarsa, dərhal bizimlə əlaqə saxlayın.</li>
-        </ul>
-
-        <h3>6. Nəticələrin Qorunması</h3>
-        <p>Sınaq imtahanı nəticələri şəxsi hesabınızda saxlanılır və yalnız sizə məxsusdur. Digər istifadəçilərin nəticələrinə girişiniz yoxdur, istisna olaraq, profiliniz publik seçilmişdirsə, sizin ümumi nəticələriniz detalları olmadan digər istifadəçilərə göstərilə bilər.</p>
-
-        <h3>7. Məsuliyyətin Məhdudlaşdırılması</h3>
-        <ul>
-            <li>Sayt vasitəsilə təqdim olunan materiallar ehtiyatla və diqqətlə hazırlanır, lakin nəticələrin zəmanəti verilmir.</li>
-            <li>Saytın fəaliyyəti və məzmunu ilə bağlı heç bir halda maddi və ya mənəvi itkilərə görə məsuliyyət daşımırıq.</li>
-        </ul>
-
-        <h3>8. SMS Xidmətləri</h3>
-        <ul>
-            <li>İstifadəçi sayta qeydiyyat zamanı və ya sonradan mobil nömrəsini təqdim etməklə SMS vasitəsilə bildiriş almağa razılıq verir.</li>
-            <li>Göndərilən SMS-lər informativ xarakter daşıyır və reklam xarakterli ola bilər.</li>
-            <li>SMS-lər üçüncü tərəf xidmət təminatçıları vasitəsilə göndərilir.</li>
-            <li>İstifadəçi istədiyi zaman SMS xidmətindən imtina edə bilər.</li>
-        </ul>
-
-        <h3>9. Dəyişikliklər</h3>
-        <p>Bu şərtlər istənilən vaxt dəyişdirilə bilər. Dəyişikliklər sayt üzərindən elan olunacaq və istifadəçilər üçün qüvvəyə minəcək.</p>
-
-        <h3>10. Mübahisələrin Həlli</h3>
-        <p>Bu şərtlərlə bağlı yaranan hər hansı mübahisə Azərbaycan Respublikasının qanunvericiliyinə uyğun həll ediləcək.</p>
-
-        <h3>11. Əlaqə</h3>
-        <p><b>Email:</b> ys.imanoff@gmail.com</p>
-        <p><b>Telefon:</b> +994 506671557</p>
-
+        <p>Dövlət qulluğu imtahanlarına hazırlıq məqsədi ilə təhsil materialları təqdim edən platformadır.</p>
         <br>
-        <button class="btn btn-outline" onclick="showSection('home')" style="width:100%;">Ana səhifəyə qayıt</button>
+        <button class="btn-main-dark" onclick="showSection('home')" style="width:100%;">Ana səhifəyə qayıt</button>
     </div>
 </div>
 
 <!-- MƏXFİLİK SİYASƏTİ SƏHİFƏSİ -->
 <div id="privacy-section" style="display:none;">
     <div class="policy-container">
-        <h2>Dövlət Qulluğu Platformunun Məxfilik Siyasəti</h2>
-        
-        <h3>MƏXFİLİK SİYASƏTİ</h3>
-        
+        <h2>Məxfilik Siyasəti</h2>
         <h3>1. Ümumi Məlumat</h3>
-        <p>Bu Məxfilik Siyasəti ("Siyasət") https://dovletqullugu.info/ saytından istifadə edən bütün istifadəçilərin şəxsi məlumatlarının toplanması, istifadəsi və qorunması prinsiplərini müəyyən edir. Saytdan istifadə etməklə siz bu siyasətdə göstərilən şərtlərlə razılaşırsınız. Əgər razı deyilsinizsə, sayt xidmətlərindən istifadə etməyin.</p>
-
-        <h3>2. Toplanılan Məlumatlar</h3>
-        <ul>
-            <li><b>Şəxsi məlumatlar:</b> ad, soyad, əlaqə nömrəsi, e-poçt ünvanı və hesab yaratmaq üçün tələb olunan digər məlumatlar.</li>
-            <li><b>Texniki məlumatlar:</b> istifadəçinin sayta daxil olduğu zaman avtomatik olaraq IP ünvanı, brauzer növü, cihaz tipi və bənzər texniki məlumatlar.</li>
-        </ul>
-
-        <h3>3. Məlumatların İstifadəsi</h3>
-        <ul>
-            <li>Sayt xidmətlərinin göstərilməsi və istifadəçinin hesabının idarə olunması.</li>
-            <li>İmtahan nəticələrinin və istifadəçi fəaliyyətinin saxlanması və təqdimatı.</li>
-            <li>İstifadəçi ilə əlaqə və sayt haqqında yeniliklərin bildirişi.</li>
-            <li>Xidmətlərin yaxşılaşdırılması və analiz məqsədilə məlumatların işlənməsi.</li>
-        </ul>
-
-        <h3>4. Məlumatların Paylaşılması və Açıqlanması</h3>
-        <ul>
-            <li>İstifadəçi razılığı olmadan şəxsi məlumatlar üçüncü şəxslərlə paylaşılmır, qanunvericiliklə tələb olunmadıqda.</li>
-            <li>İstifadəçi öz profilini publik seçdiyi halda, onun ümumi nəticələri detallarsız şəkildə digər istifadəçilərə göstərilə bilər.</li>
-        </ul>
-
-        <h3>5. Məlumatların Qorunması</h3>
-        <ul>
-            <li>Fərdi məlumatların təhlükəsizliyi üçün müasir texnoloji və təşkilati tədbirlər görülür.</li>
-            <li>Məlumatların icazəsiz çıxarılması, dəyişdirilməsi və itirilməsinin qarşısının alınması təmin edilir.</li>
-            <li>Məlumatlar təhlükəsiz və şifrələnmiş kanallar vasitəsilə ötürülür.</li>
-        </ul>
-
-        <h3>6. Məlumatların Saxlanması</h3>
-        <p>Şəxsi məlumatlar qanunvericilikdə nəzərdə tutulmuş müddətdə və toplanma məqsədləri üçün lazım olan qədər saxlanılır.</p>
-
-        <h3>7. İstifadəçinin Hüquqları</h3>
-        <ul>
-            <li>İstifadəçi öz şəxsi məlumatlarına giriş hüququna malikdir.</li>
-            <li>İstifadəçi məlumatların düzəlişi, məhdudlaşdırılması və silinməsi üçün müraciət edə bilər.</li>
-        </ul>
-
-        <h3>8. Cookies və Analitik Məlumatlar</h3>
-        <ul>
-            <li>Sayt xidmətlərinin düzgün işləməsi və istifadəçi təcrübəsinin təkmilləşdirilməsi məqsədilə cookie-lərdən istifadə olunur.</li>
-            <li>İstifadəçi cookie-ləri qəbul etməməyi seçə bilər, lakin bəzi xidmətlər məhdudlaşa bilər.</li>
-        </ul>
-
-        <h3>9. SMS Bildirişləri</h3>
-        <ul>
-            <li>Saytımız istifadəçilərə müxtəlif bildirişlər göndərmək üçün mobil nömrələrə SMS göndərə bilər.</li>
-            <li>SMS-lər üçüncü tərəf xidmət təminatçıları vasitəsilə göndərilir ki, bu da onların çatdırılmasını və idarəsini təmin edir.</li>
-            <li>Bu xidmət təminatçıları istifadəçi məlumatlarının məxfiliyinə hörmət edir və yalnız SMS göndərilməsi məqsədilə istifadə olunur.</li>
-            <li>SMS göndərilməsinə razılıq istifadəçi hesabı yaradarkən və ya bu xidməti istifadə edərkən verilir.</li>
-            <li>İstifadəçi istədiyi zaman SMS bildirişləri qəbul etməməyi seçə və ya bunun üçün bizimlə əlaqə saxlaya bilər.</li>
-            <li>SMS-lər əsasən xidmətlər, yeniliklər və digər vacib məlumatlar barədə ola bilər.</li>
-        </ul>
-
-        <h3>10. Dəyişikliklər</h3>
-        <p>Bu siyasət istənilən vaxt dəyişdirilə bilər, dəyişikliklər sayt vasitəsilə elan olunacaq.</p>
-
-        <h3>11. Mübahisələrin Həlli</h3>
-        <p>Bu şərtlərlə bağlı yaranan hər hansı mübahisə Azərbaycan Respublikasının qanunvericiliyinə uyğun həll ediləcək.</p>
-
-        <h3>12. Əlaqə</h3>
-        <p><b>Email:</b> ys.imanoff@gmail.com</p>
-        <p><b>Telefon:</b> +994 506671557</p>
-
+        <p>İstifadəçilərin şəxsi məlumatlarının qorunması prinsiplərini müəyyən edir.</p>
+        <h3>2. Məlumatların Qorunması</h3>
+        <p>Fərdi məlumatların təhlükəsizliyi üçün müasir tədbirlər görülür.</p>
         <br>
-        <button class="btn btn-outline" onclick="showSection('home')" style="width:100%;">Ana səhifəyə qayıt</button>
+        <button class="btn-main-dark" onclick="showSection('home')" style="width:100%;">Ana səhifəyə qayıt</button>
     </div>
 </div>
 
 <!-- ŞƏXSİ KABİNET SƏHİFƏSİ -->
 <div id="profile-section" style="display:none;">
     <div class="profile-container">
-        <h2 style="color:#ffd700; margin-bottom:15px;">Şəxsi Kabinet</h2>
+        <h2 style="color:#0f172a; margin-bottom:15px;">Şəxsi Kabinet</h2>
         <p><b>Ad/İstifadəçi:</b> <span id="profile-name"></span></p>
-        <p><b>Əlaqə (Gmail / Nömrə):</b> <span id="profile-contact"></span></p>
-        <hr style="border-color: #ffd700; margin: 20px 0;">
-        <h3 style="color:#ffd700; margin-bottom:10px;">Sınaq Nəticələrim</h3>
-        <p id="profile-result" style="color:#ddd;">Hələ ki heç bir sınaqda iştirak etməmisiniz.</p>
+        <p><b>Əlaqə:</b> <span id="profile-contact"></span></p>
+        <hr style="border-color: #eaeaea; margin: 20px 0;">
+        <h3 style="color:#0f172a; margin-bottom:10px;">Sınaq Nəticələrim</h3>
+        <p id="profile-result" style="color:#64748b;">Hələ ki heç bir sınaqda iştirak etməmisiniz.</p>
         <br>
-        <button class="btn btn-outline" onclick="showSection('home')">Ana səhifəyə qayıt</button>
+        <button class="btn-main-dark" onclick="showSection('home')">Ana səhifəyə qayıt</button>
     </div>
 </div>
 
@@ -734,14 +765,14 @@ footer a:hover {
     <div class="modal-content">
         <span class="close-btn" onclick="closeModal()">&times;</span>
         <h2 id="modal-title">Daxil ol</h2>
-        <p class="sub-text" id="modal-subtitle">Hesabınıza daxil olmaq üçün istifadəçi adınızı və şifrənizi daxil edin</p>
+        <p class="sub-text" id="modal-subtitle">Hesabınıza daxil olmaq üçün məlumatları daxil edin</p>
         
         <button type="button" class="google-btn" onclick="alert('Google ilə giriş tezliklə aktivləşəcək!')">
             <svg width="18" height="18" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 48 48"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.46-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg>
             Google ilə daxil ol
         </button>
 
-        <div class="divider"><span>VƏ YA</span></div>
+        <div class="divider"><span>və ya</span></div>
 
         <form id="authForm" onsubmit="handleAuth(event)">
             <div class="input-group" id="nameGroup">
@@ -751,17 +782,15 @@ footer a:hover {
 
             <div class="input-group">
                 <label id="contactLabel">İstifadəçi adı və ya Email</label>
-                <input type="text" id="contactInput" placeholder="İstifadəçi adınızı və ya emailinizi daxil edin" required>
-                <span class="input-hint">Qeydiyyat zamanı istifadə etdiyiniz istifadəçi adını və ya email ünvanını daxil edin.</span>
+                <input type="text" id="contactInput" placeholder="İstifadəçi adı və ya email" required>
             </div>
 
             <div class="input-group">
                 <label>Şifrə</label>
                 <input type="password" id="passInput" placeholder="Şifrənizi daxil edin" required>
-                <span class="input-hint">Şifrə böyük-kiçik hərf həssasdır.</span>
             </div>
 
-            <button type="submit" class="btn" style="width:100%; margin-top:10px; background:#22c55e; color:#fff;" id="modalSubmitBtn">Daxil ol</button>
+            <button type="submit" class="btn-main-green" style="width:100%; margin-top:10px;" id="modalSubmitBtn">Daxil ol</button>
         </form>
     </div>
 </div>
@@ -805,7 +834,7 @@ footer a:hover {
         bookPages.forEach((page, index) => {
             pagesHtml += `
                 <div class="book-page ${index === 0 ? 'active' : ''}" id="page-${index}">
-                    <p style="color: #ffd700; font-weight: bold; margin-bottom: 10px;">${page.title}</p>
+                    <p style="color: #0f172a; font-weight: bold; margin-bottom: 10px;">${page.title}</p>
                     <img src="${page.img}" class="question-img" alt="${page.title}">
                 </div>
             `;
@@ -884,7 +913,7 @@ footer a:hover {
         
         if(isLoginMode) {
             document.getElementById('modal-title').innerText = 'Daxil ol';
-            document.getElementById('modal-subtitle').innerText = 'Hesabınıza daxil olmaq üçün istifadəçi adınızı və şifrənizi daxil edin';
+            document.getElementById('modal-subtitle').innerText = 'Hesabınıza daxil olmaq üçün məlumatları daxil edin';
             document.getElementById('modalSubmitBtn').innerText = 'Daxil ol';
             document.getElementById('nameGroup').style.display = 'none';
             document.getElementById('nameInput').required = false;
@@ -920,14 +949,14 @@ footer a:hover {
         const user = JSON.parse(localStorage.getItem('dq_user'));
         if(user) {
             document.getElementById('auth-nav-buttons').style.display = 'none';
-            document.getElementById('user-nav-buttons').style.display = 'inline-block';
+            document.getElementById('user-nav-buttons').style.display = 'flex';
             document.getElementById('profile-name').innerText = user.name;
             document.getElementById('profile-contact').innerText = user.contact;
             if(user.lastResult) {
                 document.getElementById('profile-result').innerText = user.lastResult;
             }
         } else {
-            document.getElementById('auth-nav-buttons').style.display = 'inline-block';
+            document.getElementById('auth-nav-buttons').style.display = 'flex';
             document.getElementById('user-nav-buttons').style.display = 'none';
         }
     }
@@ -954,6 +983,7 @@ footer a:hover {
         document.getElementById('sinaqlar-section').style.display = 'none';
         document.getElementById('tests-section').style.display = 'none';
         document.getElementById('mentiq-test-section').style.display = 'none';
+        document.getElementById('other-test-section').style.display = 'none';
         document.getElementById('profile-section').style.display = 'none';
         document.getElementById('privacy-section').style.display = 'none';
         document.getElementById('terms-section').style.display = 'none';
@@ -992,24 +1022,13 @@ footer a:hover {
         document.getElementById('sinaqlar-section').style.display = 'none';
         document.getElementById('tests-section').style.display = 'none';
         
-        document.getElementById('test-title-heading').innerText = subjectName + " üzrə testlər";
-        document.getElementById('mentiq-test-section').style.display = 'block';
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-    }
-
-    function openSinaq(sinaqName) {
-        const user = JSON.parse(localStorage.getItem('dq_user'));
-        if(!user) {
-            alert("Sınaq işləmək üçün daxil olmalısınız!");
-            openModal('login');
-            return;
+        if(subjectName === 'Məntiq') {
+            document.getElementById('test-title-heading').innerText = "Məntiq üzrə testlər";
+            document.getElementById('mentiq-test-section').style.display = 'block';
+        } else {
+            document.getElementById('other-test-title').innerText = subjectName + " üzrə testlər";
+            document.getElementById('other-test-section').style.display = 'block';
         }
-
-        document.getElementById('home-section').style.display = 'none';
-        document.getElementById('sinaqlar-section').style.display = 'none';
-        document.getElementById('tests-section').style.display = 'none';
-        document.getElementById('test-title-heading').innerText = sinaqName + " - Məntiq (30 Sual)";
-        document.getElementById('mentiq-test-section').style.display = 'block';
         window.scrollTo({ top: 0, behavior: 'smooth' });
     }
 
@@ -1021,4 +1040,3 @@ footer a:hover {
 
 </body>
 </html>
-

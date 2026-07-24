@@ -82,12 +82,6 @@ header{
     box-shadow: 0 2px 4px rgba(0,0,0,0.02);
 }
 
-.logo-area {
-    display: flex;
-    align-items: center;
-    gap: 15px;
-}
-
 .logo-area h1 {
     color: #0f172a;
     font-size: 24px;
@@ -140,7 +134,7 @@ nav{
     justify-content:center;
     align-items:center;
     flex-wrap:wrap;
-    gap:20px;
+    gap:25px;
     padding:12px;
 }
 
@@ -156,11 +150,11 @@ nav a, nav button{
     font-family: Arial, sans-serif;
 }
 
-nav a:hover, nav buttonhover{
+nav a:hover, nav button:hover{
     color:#00c853;
 }
 
-/* Hero Bölmələri (Ağ Card Dizaynı) */
+/* Hero Bölmələri */
 .hero-box {
     max-width: 900px;
     margin: 40px auto;
@@ -187,7 +181,7 @@ nav a:hover, nav buttonhover{
     margin-right: auto;
 }
 
-/* Əsas Yaşıl və Göy Düymələr */
+/* Düymələr */
 .btn-main-green {
     display: inline-block;
     padding: 14px 30px;
@@ -263,7 +257,7 @@ nav a:hover, nav buttonhover{
     font-weight:bold;
 }
 
-/* Kitabça / Vərəqlənən Məntiq Testi Səhifəsi */
+/* Test Konteyneri və Səhifələr */
 .test-container {
     max-width: 900px;
     margin: 30px auto;
@@ -363,7 +357,7 @@ nav a:hover, nav buttonhover{
     color: #fff;
 }
 
-/* Siyasət və Şərtlər Səhifəsi */
+/* Siyasət və Şərtlər */
 .policy-container {
     max-width: 800px;
     margin: 40px auto;
@@ -389,18 +383,13 @@ nav a:hover, nav buttonhover{
     font-size: 18px;
 }
 
-.policy-container p, .policy-container li {
+.policy-container p {
     color: #64748b;
     font-size: 14px;
     margin-bottom: 8px;
 }
 
-.policy-container ul {
-    margin-left: 20px;
-    margin-bottom: 15px;
-}
-
-/* Modal Dizaynı */
+/* Modal */
 .modal {
     display: none;
     position: fixed;
@@ -514,13 +503,6 @@ nav a:hover, nav buttonhover{
     background: #fff;
 }
 
-.input-hint {
-    font-size: 11px;
-    color: #94a3b8;
-    margin-top: 4px;
-    display: block;
-}
-
 .profile-container {
     max-width: 600px;
     margin: 40px auto;
@@ -558,27 +540,26 @@ footer a:hover {
 <!-- ƏN ÜST ƏLAQƏ PANELİ -->
 <div class="top-bar">
     <div class="top-contact">
-        <a href="tel:+994708838100">📞 +994 70 883 81 00</a>
-        <a href="mailto:info@dovletqullugu.info">✉️ info@dovletqullugu.info</a>
+        <a href="tel:+994506671557">📞 +994 50 667 15 57</a>
+        <a href="mailto:Ys.imanoff@gmail.com">✉️ Ys.imanoff@gmail.com</a>
     </div>
     <div class="top-socials">
         <a href="https://www.facebook.com" target="_blank">f</a>
         <a href="https://www.instagram.com/ys.imanoff" target="_blank">📷</a>
-        <a href="https://youtube.com" target="_blank">▶</a>
         <a href="https://wa.me/qr/2OLYZXD45JFZO1" target="_blank">💬</a>
     </div>
 </div>
 
 <!-- HEADER VƏ LOGO -->
 <header>
-    <div class="logo-area">
+    <div class="logo-area" style="padding-left: 10px;">
         <h1>DQ Platform</h1>
     </div>
-    <div class="auth-buttons-header" id="auth-nav-buttons">
+    <div class="auth-buttons-header" id="auth-nav-buttons" style="padding-right: 10px;">
         <button class="btn-login" onclick="openModal('login')">Daxil ol</button>
         <button class="btn-register" onclick="openModal('register')">Qeydiyyatdan keç</button>
     </div>
-    <div class="auth-buttons-header" id="user-nav-buttons" style="display:none;">
+    <div class="auth-buttons-header" id="user-nav-buttons" style="display:none; padding-right: 10px;">
         <button class="btn-login" onclick="showSection('profile')">👤 Kabinet</button>
         <button class="btn-register" onclick="logout()" style="border-color: #ef4444; color: #ef4444;">Çıxış</button>
     </div>
@@ -589,9 +570,7 @@ footer a:hover {
     <a onclick="showSection('home')">Ana səhifə</a>
     <a onclick="checkAndShow('sinaqlar')">Sınaqlar</a>
     <a onclick="checkAndShow('tests')">Testlər</a>
-    <a onclick="showSection('materials')">Materiallar</a>
-    <a href="https://www.instagram.com/ys.imanoff" target="_blank">İnstagram</a>
-    <a href="https://wa.me/qr/2OLYZXD45JFZO1" target="_blank">WhatsApp</a>
+    <a onclick="showSection('yenilikler')">Yeniliklər</a>
 </nav>
 
 <!-- ƏSAS SƏHİFƏ -->
@@ -605,9 +584,11 @@ footer a:hover {
             <button class="btn-main-dark" onclick="openModal('register')">👤 Qeydiyyatdan Keç və İndi Başla</button>
         </div>
         
-        <div style="margin-top: 25px;">
-            <a href="https://t.me/dovlettqullugu" class="btn-main-dark" style="font-size: 13px; padding: 10px 20px;">📢 Telegram Kanal</a>
-            <a href="https://chat.whatsapp.com/GIb2EwwiXXg3PpEJWZVKss" class="btn-main-dark" style="font-size: 13px; padding: 10px 20px;">💬 WhatsApp Qrup</a>
+        <div style="margin-top: 25px; display: flex; justify-content: center; flex-wrap: wrap; gap: 10px;">
+            <a href="https://t.me/dovlettqullugu" target="_blank" class="btn-main-dark" style="font-size: 13px; padding: 10px 18px;">📢 Telegram Kanal</a>
+            <a href="https://t.me/+dovletqullugu_qrup" target="_blank" class="btn-main-dark" style="font-size: 13px; padding: 10px 18px;">👥 Telegram Qrup</a>
+            <a href="https://whatsapp.com/channel/..." target="_blank" class="btn-main-dark" style="font-size: 13px; padding: 10px 18px; background: #00c853;">📢 WhatsApp Kanal</a>
+            <a href="https://chat.whatsapp.com/GIb2EwwiXXg3PpEJWZVKss" target="_blank" class="btn-main-dark" style="font-size: 13px; padding: 10px 18px; background: #00c853;">💬 WhatsApp Qrup</a>
         </div>
     </div>
 
@@ -622,7 +603,7 @@ footer a:hover {
                 <p class="card-title">TESTLƏR</p>
                 <p style="font-size: 13px; color: #64748b; margin-top: 6px;">Fənlər üzrə testlər</p>
             </div>
-            <div class="card" onclick="showSection('home')">
+            <div class="card" onclick="showSection('yenilikler')">
                 <p class="card-title">YENİLİKLƏR</p>
                 <p style="font-size: 13px; color: #64748b; margin-top: 6px;">Elanlar və xəbərlər</p>
             </div>
@@ -632,6 +613,20 @@ footer a:hover {
             </div>
         </div>
     </section>
+</div>
+
+<!-- YENİLİKLƏR SƏHİFƏSİ (ŞƏKİLLİ) -->
+<div id="yenilikler-section" style="display:none;">
+    <div class="hero-box" style="max-width: 750px;">
+        <h2 style="color:#0f172a;">Elanlar və Yeniliklər</h2>
+        <p>Platformadakı son elanlar və yenilənmiş posterlər:</p>
+        
+        <div style="margin: 20px 0;">
+            <img src="əli poster.jpg" alt="Yenilik Elanı" style="max-width: 100%; border-radius: 12px; border: 1px solid #e2e8f0; box-shadow: 0 4px 12px rgba(0,0,0,0.05);">
+        </div>
+
+        <button class="btn-main-dark" onclick="showSection('home')">Ana səhifəyə qayıt</button>
+    </div>
 </div>
 
 <!-- ÜMUMİ SINAQLAR SƏHİFƏSİ -->
@@ -678,29 +673,23 @@ footer a:hover {
     </div>
 </div>
 
-<!-- KİTABÇA / VƏRƏQLƏNƏN MƏNTİQ TESTİ SƏHİFƏSİ -->
+<!-- KİTABÇA / MƏNTİQ TESTİ SƏHİFƏSİ -->
 <div id="mentiq-test-section" style="display:none;">
     <div class="test-container">
         <h2 id="test-title-heading" style="color:#0f172a; text-align:center; margin-bottom:15px;">Məntiq Testləri</h2>
         
         <form id="logicQuizForm" onsubmit="submitQuiz(event)">
-            
-            <!-- Kitabça Səhifələri -->
             <div id="book-pages-container"></div>
 
-            <!-- Vərəqləmə Düymələri -->
             <div class="book-nav">
                 <button type="button" class="btn-main-dark" id="prevBtn" onclick="changePage(-1)">⬅️ Əvvəlki</button>
                 <span id="pageIndicator" style="color: #0f172a; font-weight: bold;">Səhifə 1 / 6</span>
                 <button type="button" class="btn-main-green" id="nextBtn" onclick="changePage(1)">Növbəti ➡️</button>
             </div>
 
-            <!-- CAVAB KARTI -->
             <div class="answer-sheet">
                 <h3>📋 Cavab Kartı</h3>
-                <div class="answer-grid" id="answer-sheet-grid">
-                    <!-- JS vasitəsilə dolacaq -->
-                </div>
+                <div class="answer-grid" id="answer-sheet-grid"></div>
             </div>
 
             <button type="submit" class="btn-main-green" style="width:100%; margin-top:25px; padding: 15px; font-size: 16px;">Nəticəni Yoxla və Göndər</button>
@@ -710,7 +699,6 @@ footer a:hover {
     </div>
 </div>
 
-<!-- DİGƏR FƏNNLƏR ÜÇÜN SADƏ BÖLMƏ -->
 <div id="other-test-section" style="display:none;">
     <div class="hero-box" style="max-width: 600px;">
         <h2 id="other-test-title" style="color:#0f172a;">Fənn</h2>
@@ -720,33 +708,26 @@ footer a:hover {
     </div>
 </div>
 
-<!-- İSTİFADƏ ŞƏRTLƏRİ SƏHİFƏSİ -->
 <div id="terms-section" style="display:none;">
     <div class="policy-container">
         <h2>İstifadə Şərtləri</h2>
         <h3>1. Ümumi Məlumat</h3>
-        <p>Bu istifadə şərtləri https://dovletqullugu.info/ saytından istifadə edən şəxslər üçün keçərlidir.</p>
-        <h3>2. Saytın Məqsədi</h3>
-        <p>Dövlət qulluğu imtahanlarına hazırlıq məqsədi ilə təhsil materialları təqdim edən platformadır.</p>
+        <p>Bu istifadə şərtləri platformadan istifadə edən şəxslər üçün keçərlidir.</p>
         <br>
         <button class="btn-main-dark" onclick="showSection('home')" style="width:100%;">Ana səhifəyə qayıt</button>
     </div>
 </div>
 
-<!-- MƏXFİLİK SİYASƏTİ SƏHİFƏSİ -->
 <div id="privacy-section" style="display:none;">
     <div class="policy-container">
         <h2>Məxfilik Siyasəti</h2>
         <h3>1. Ümumi Məlumat</h3>
         <p>İstifadəçilərin şəxsi məlumatlarının qorunması prinsiplərini müəyyən edir.</p>
-        <h3>2. Məlumatların Qorunması</h3>
-        <p>Fərdi məlumatların təhlükəsizliyi üçün müasir tədbirlər görülür.</p>
         <br>
         <button class="btn-main-dark" onclick="showSection('home')" style="width:100%;">Ana səhifəyə qayıt</button>
     </div>
 </div>
 
-<!-- ŞƏXSİ KABİNET SƏHİFƏSİ -->
 <div id="profile-section" style="display:none;">
     <div class="profile-container">
         <h2 style="color:#0f172a; margin-bottom:15px;">Şəxsi Kabinet</h2>
@@ -781,7 +762,7 @@ footer a:hover {
             </div>
 
             <div class="input-group">
-                <label id="contactLabel">İstifadəçi adı və ya Email</label>
+                <label>İstifadəçi adı və ya Email</label>
                 <input type="text" id="contactInput" placeholder="İstifadəçi adı və ya email" required>
             </div>
 
@@ -987,6 +968,7 @@ footer a:hover {
         document.getElementById('profile-section').style.display = 'none';
         document.getElementById('privacy-section').style.display = 'none';
         document.getElementById('terms-section').style.display = 'none';
+        document.getElementById('yenilikler-section').style.display = 'none';
 
         if(sectionName === 'home') {
             document.getElementById('home-section').style.display = 'block';
@@ -994,6 +976,8 @@ footer a:hover {
             document.getElementById('sinaqlar-section').style.display = 'block';
         } else if(sectionName === 'tests') {
             document.getElementById('tests-section').style.display = 'block';
+        } else if(sectionName === 'yenilikler') {
+            document.getElementById('yenilikler-section').style.display = 'block';
         } else if(sectionName === 'privacy') {
             document.getElementById('privacy-section').style.display = 'block';
         } else if(sectionName === 'terms') {
@@ -1021,6 +1005,7 @@ footer a:hover {
         document.getElementById('home-section').style.display = 'none';
         document.getElementById('sinaqlar-section').style.display = 'none';
         document.getElementById('tests-section').style.display = 'none';
+        document.getElementById('yenilikler-section').style.display = 'none';
         
         if(subjectName === 'Məntiq') {
             document.getElementById('test-title-heading').innerText = "Məntiq üzrə testlər";
